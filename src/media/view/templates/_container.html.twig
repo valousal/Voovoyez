@@ -48,32 +48,31 @@
                                     </div>
                                 </div>
                             </div>
-                    </div>
-                    <div class='others_illustrations'>
-                        {% for image in images if image.type == 'thumb' and image.id_categorie == 1 %}
-                            <!-- Illustration avec hover -->
-                            <div class='ma_taille'  id='illustration{{image.id}}'>
-                                <div class="shadow">
-                                    <div class='view view-first'>
 
-                                        <img src="{{rootUri}}/src/media/assets/datas/img/Thumb/small/{{image.nom_image}}_thumb.{{image.extension_image}}" class='img'>
-                                        <div class="mask">
-                                            <!--<p>Bonjour</p>-->
-                                            <a class="fancybox zoom" rel="illustrations" href="{{rootUri}}/src/media/assets/datas/img/{{image.nom_dossier}}/big/{{image.nom_image}}.{{image.extension_image}}"><img src='{{rootUri}}/src/media/assets/datas/img/pics/add121.png'></a>
-                                            <a href="#{{image.id_projet}}" class="info">Le projet</a>
+                            <div class='others_illustrations'>
+                                {% for image in images if image.type == 'thumb' and image.id_categorie == 1 %}
+                                    <!-- Illustration avec hover -->
+                                    <div class='ma_taille'  id='illustration{{image.id}}'>
+                                        <div class="shadow">
+                                            <div class='view view-first'>
+
+                                                <img src="{{rootUri}}/src/media/assets/datas/img/Thumb/small/{{image.nom_image}}_thumb.{{image.extension_image}}" class='img'>
+                                                <div class="mask">
+                                                    <!--<p>Bonjour</p>-->
+                                                    <a class="fancybox zoom" rel="illustrations" href="{{rootUri}}/src/media/assets/datas/img/{{image.nom_dossier}}/big/{{image.nom_image}}.{{image.extension_image}}"><img src='{{rootUri}}/src/media/assets/datas/img/pics/add121.png'></a>
+                                                    <a href="#{{image.id_projet}}" class="info">Le projet</a>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+
+                                {% endfor %}
                             </div>
-
-                        {% endfor %}
                     </div>
-
-
 
 
                     <div class='logo'>
-                        <h1>Logo</h1>
+                        <h1>Identité visuelle</h1>
                         
                         <!-- Logo avec hover -->
                         <div class='ma_taille' id='logo1'>

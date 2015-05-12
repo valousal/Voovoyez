@@ -128,19 +128,17 @@ $(document).ready(function () {
     
     
     $("#back").hide();
-    // scroll container depuis overview
-    $(function () {        
-        $('#back a').click(function () {
-            $('body,html').animate({
-                scrollTop: 0
-            }, 0);
-            $("#back").hide();
-            $('#container').show();
-            $('#overview').css({position:'fixed', left:'105%'});
-            $('body').css('cursor','');
-            
-            return false;
-        });
+    // scroll container depuis overview       
+    $('#back a').click(function () {
+        $('body,html').animate({
+            scrollTop: 0
+        }, 0);
+        $("#back").hide();
+        $('#container').show();
+        $('#overview').css({position:'fixed', left:'105%'});
+        $('body').css('cursor','');
+        
+        return false;
     });
     
     
@@ -271,7 +269,7 @@ $(document).ready(function () {
     $('.illustrations h1').click(function () {
         // $('#container .parallax .scene .illustrations .ma_taille:nth-child(n+4)').css({display:'inline-block'});
         centerLayer('-17','-20');
-        $('#container .parallax .scene .others_illustrations').show();
+        // $('#container .parallax .scene .illustrations .others_illustrations').show();
     });
 
 
@@ -283,7 +281,7 @@ $(document).ready(function () {
 
     $('.site h1').click(function () {
         // $('#container .parallax .scene .illustrations .ma_taille:nth-child(n+4)').css({display:'inline-block'});
-        centerLayer('0','43');
+        centerLayer('-5','43');
 
     });
 

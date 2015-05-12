@@ -19,6 +19,7 @@ body{
 }
 
 #container{
+    
 }
 
 
@@ -137,43 +138,43 @@ body{
 
 /********* Illustrations *********/
 
-#container .parallax .scene .illustrations{
+/*#container .parallax .scene .illustrations{
     position: absolute;
     display: block;
-    left:70%;/*1200px;*/
+    left:70%;
     background-image: url(../datas/img/background/Fond-Illustrations.jpg);
     background-repeat: no-repeat;
     width: 720px;
     height:480px;
-/*    background-size: 100%;*/
     z-index: -5;
-}
+}*/
 
 
 #container .parallax .scene .illustrations h1{
     position: absolute;
-    top:230px;
-    left:400px;
+    top:18%;
+    left:95%;
     font-family:'Sketch Nice', Arial;
     font-size:3em;
     cursor: pointer;
+    z-index: 3;
 }
 
 #container .parallax .scene .illustrations #illustration_1{
-    left:260px;
-    top:300px;
-    position: absolute;
-    z-index: 1;
-}
-
-#container .parallax .scene .illustrations #illustration_2{
-    left:160px;
-    top:100px;
+    left:85%;
+    top:4%;
     position: absolute;
     z-index: 2;
 }
 
-#container .parallax .scene .others_illustrations{
+#container .parallax .scene .illustrations #illustration_2{
+    left:95%;
+    top:25%;
+    position: absolute;
+    z-index: 1;
+}
+
+#container .parallax .scene .illustrations .others_illustrations{
     display: none;
     padding: 10px;
     /*-webkit-transition: top 1.3s ease 0s;
@@ -181,7 +182,7 @@ body{
     transition: top 1.3s ease 0s;*/
 }
 
-#container .parallax .scene .others_illustrations > *{
+#container .parallax .scene .illustrations .others_illustrations > *{
     display: inline-block;
     /*-webkit-transition: top 1.3s ease 0s;
     -moz-transition: top 1.3s ease 0s;
@@ -190,16 +191,16 @@ body{
 
 /********* Logo *********/
 #container .parallax .scene .logo{
-    position: absolute;
-    left:40%; /* 520px */
-    top:-5%; /* 50px */
-    z-index: -5;
+    /*position: absolute;
+    left:40%; 
+    top:-5%; 
+    z-index: -5;*/
 }
 
 #container .parallax .scene .logo h1{
     position: absolute;
-    top:230px;
-    left:0px;
+    top:41%;
+    left:50%;
     font-size:3em;
     text-transform: uppercase;
     font-weight: 600;
@@ -210,30 +211,30 @@ body{
 
 
 #container .parallax .scene .logo #logo1{
-    /*left:260px;
-    top:300px;*/
+    left:48%;
+    top:15%;
     position: absolute;
     z-index: 1;
 }
 
 #container .parallax .scene .logo #logo2{
-    left:160px;
-    top:100px;
+    left:37%;
+    top:26%;
     position: absolute;
     z-index: 2;
 }
 /********* Site web *********/
 #container .parallax .scene .site{
-    position: absolute;
-    left:-8%; /*-150px*/
-    top:2%; /*100px*/
-    z-index: -5;
+    /*position: absolute;
+    left:-8%; 
+    top:2%; 
+    z-index: -5;*/
 }
 
 #container .parallax .scene .site h1{
    position: absolute;
-    top:260px;
-    left:420px;
+    top:88%;
+    left:41%;
     font-size:3em;
     text-transform: uppercase;
     font-weight: 600;
@@ -244,30 +245,30 @@ body{
 
 
 #container .parallax .scene .site #web1{
-    /*left:260px;
-    top:300px;*/
+    left:37%;
+    top:95%;
     position: absolute;
     z-index: 1;
 }
 
 #container .parallax .scene .site #web2{
-    left:160px;
-    top:100px;
+    left:48%;
+    top:76%;
     position: absolute;
     z-index: 2;
 }
 /********* Retouches photos *********/
 #container .parallax .scene .retouche{
-    position: absolute;
-    left:13%; /*170px*/
-    top:45%; /*500px*/
-    z-index: -5;
+    /*position: absolute;
+    left:13%; 
+    top:45%; 
+    z-index: -5;*/
 }
 
 #container .parallax .scene .retouche h1{
-/*   position: absolute;*/
-    top:260px;
-    left:400px;
+    position: absolute;
+    top:10%;
+    left:-13%;
     font-size:3em;
     text-transform: uppercase;
     font-weight: 600;
@@ -277,31 +278,31 @@ body{
 }
 
 #container .parallax .scene .retouche #retouche1{
-    /*left:260px;
-    top:300px;*/
-    position: absolute;
-    z-index: 1;
-}
-
-#container .parallax .scene .retouche #retouche2{
-    left:160px;
-    top:100px;
+    left:6%;
+    top:-16%;
     position: absolute;
     z-index: 2;
 }
 
+#container .parallax .scene .retouche #retouche2{
+    left:16%;
+    top:-8%;
+    position: absolute;
+    z-index: 1;
+}
+
 /********* Mise en page *********/
 #container .parallax .scene .miseenpage{
-    position: absolute;
-    left:70%;/*1170px*/
-    top:75%; /*850px*/
-    z-index: -5;
+    /*position: absolute;
+    left:70%;
+    top:75%; 
+    z-index: -5;*/
 }
 
 #container .parallax .scene .miseenpage h1{
-/*   position: absolute;*/
-    top:260px;
-    left:400px;
+    position: absolute;
+    top:50%;
+    left:6%;
     font-size:3em;
     text-transform: uppercase;
     font-weight: 600;
@@ -311,30 +312,30 @@ body{
 }
 
 #container .parallax .scene .miseenpage #page1{
-    /*left:260px;
-    top:300px;*/
+    left:4%;
+    top:23%;
     position: absolute;
     z-index: 1;
 }
 
 #container .parallax .scene .miseenpage #page2{
-    left:160px;
-    top:100px;
+    left:-7%;
+    top:35%;
     position: absolute;
     z-index: 2;
 }
 /********* Packaging CD *********/
 #container .parallax .scene .packaging{
-    position: absolute;
-    left:45%; /*760px*/
-    top:45%; /*450px*/
-    z-index: -5;
+    /*position: absolute;
+    left:45%; 
+    top:45%; 
+    z-index: -5;*/
 }
 
 #container .parallax .scene .packaging h1{
    position: absolute;
-    top:10px;
-    left:240px;
+    top:76%;
+    left:72%;
     font-size:3em;
     text-transform: uppercase;
     font-weight: 600;
@@ -344,15 +345,15 @@ body{
 }
 
 #container .parallax .scene .packaging #CD1{
-    left:0px;
-    top:0px;
+    left:95%;
+    top:65%;
     position: absolute;
     z-index: 1;
 }
 
 #container .parallax .scene .packaging #CD2{
-    left:168px;
-    top:140px;
+    left:86%;
+    top:83%;
     position: absolute;
     z-index: 2;
 }
