@@ -1,0 +1,95 @@
+<!-- CONTACT -->
+    <div id='contact' class="pt-page pt-page-3">
+        <!-- Formulaire -->
+        <div id='formulaire'>
+            <form action="{{rootUri}}/src/media/assets/utils/contact.php" method="post" id='form'>
+                <!--FIRST LIGNE-->
+                <div class='ligne'>
+                    <div class="form-group premier">
+                        <select name='civilite' required>
+                            <option value='Monsieur' selected>Monsieur</option>
+                            <option value='Madame'>Madame</option>
+                        </select>
+                    </div>
+                </div>               
+                
+                <!--SECOND LIGNE-->
+                <div class='ligne'>
+                    <div class="form-group premier">
+                        <input type="text" placeholder="Votre nom" name='nom' id='nom' required data-parsley-length="[4, 20]" >
+                    </div>
+
+                    <div class="form-group second">
+                        <input type="text" placeholder="Votre prénom" name='prenom' id='prenom' required data-parsley-length="[4, 20]">
+                    </div>
+                </div>
+                
+                
+                                
+                <!--3e LIGNE-->
+                <div class="ligne">
+                    <div class="form-group premier">
+                        <input type="email" placeholder="Votre mail" name='mail' required>
+                    </div>
+
+                    <div class="form-group second">
+                        <input type="num" placeholder="Votre téléphone" name='tel' maxlength='10'>
+                    </div>
+                </div>
+                
+                
+                <!--4e LIGNE-->
+                <div class="ligne">
+                    <div class="form-group premier">
+                        <input type="num" placeholder="Votre CP" name='cp' required>
+                    </div>
+
+                    <div class="form-group second">
+                        <input type="text" placeholder="Votre ville" name='ville' required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <textarea placeholder="Votre message" name='message' required rows="10" data-parsley-minlength="20" data-parsley-maxlength="100" data-parsley-minlength-message = "Come on! You need to enter at least a 20 caracters long comment.." data-parsley-validation-threshold="10"></textarea>
+                </div>
+                
+                <div class='submit'>
+                    <button type="submit">Envoyer</button>
+                </div>
+                <!--<input type="reset" value='Effacer'>-->
+            </form>
+        </div>
+        
+        <!-- Adresse -->
+        <div id='informations'> 
+            <div id='coordonnes'>
+                <div id="adresse">
+                    <h4>COORDONNÉES</h4>
+                    <p><strong>Siège social<br>& adresse postale</strong></p>
+                    57 Bis Rue d'Hellieule<br>
+                    88100<br>
+                    Saint-Dié-Des-Vosges
+                </div>
+                
+                <div id='horaire'>
+                    <h4>HORAIRES</h4>
+                    <p>Lundi à vendredi : 8h30 – 17h30</p>
+                    <p>Tél. 03 00 00 00 00<br>
+                    Mail : example@fai.com</p>
+                </div>
+            </div>
+            
+            <!-- Map -->
+            <div id='map'>
+            </div>
+        </div>
+        
+        
+        <!-- Back-top -->
+        <div id='back-top'>
+            <a href="#container">
+                <i class="fa fa-arrow-up fa-3x"></i>
+            </a>
+        </div>
+    </div>
+    <!-- FIN CONTACT -->

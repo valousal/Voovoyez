@@ -1,0 +1,768 @@
+/* ATELIER VOOVOYEZ - COPYRIGHT */
+
+
+/********************************/
+/********* CSS BODY ************/
+/********************************/
+body{
+    height: 100%;
+    overflow: hidden;
+    width:100%;
+    background-color: #e0d7d2;
+    cursor:url(../datas/img/pics/pointer32.png), auto;
+    margin-left: 0;
+    font-family: "Lato",sans-serif;
+    font-weight: 300;
+    font-size: 1em;
+    box-sizing: border-box;
+    line-height: 1.2;
+}
+
+#container{
+}
+
+
+/********************************/
+/******* CSS PARALLAX ***********/
+/********************************/
+
+/********* Scène *********/
+#container .parallax{
+    min-height:500px;
+    position: absolute;
+    overflow: hidden;
+    /*display: table;*/
+    width: 100%;
+    height: 100%;
+    left:0px;
+    top:0px;
+    z-index: -1001;
+}
+
+#container .parallax .scene .ma_taille{
+    width: 200px; /* Taille des vignettes */
+}
+
+
+#container .parallax .scene{
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    z-index: -1000;
+}
+
+#container .scene, #container .scene .layer{
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+    margin:0px;
+    z-index: -999;
+}
+
+
+#container .scene, #container .scene .layer:nth-child(2){
+    width: 100%;
+    height: 100%;
+}
+
+#container ul.scene{
+    list-style: outside none none;
+    display: block;
+    padding: 0px;
+    margin: 0px;
+}
+
+
+#container .parallax .scene .background{
+/*    background: url("../datas/img/background.jpg") no-repeat scroll 50% 100% / cover transparent;*/
+    background-color: #e0d7d2;
+    
+    position: absolute;
+    width: 120%;
+/*    height: 100%;*/
+    left: -10%;
+    top:-10%;
+    bottom:-10%;
+}
+
+#container .parallax .scene .view img{
+    width: 100%;
+} 
+
+#container .parallax .scene .shadow{
+    height: 100%;
+    width: 100%;
+    position: relative;
+    overflow: visible;
+}
+
+
+#container .parallax .scene .shadow:before,#container .parallax .scene .shadow:after{
+   z-index: -1;
+  position: absolute;
+  content: "";
+  bottom: 10px;
+  left: 5px;
+  width: 53%;
+  top: 90%;
+/*  max-width:300px;*/
+  background: #777;
+  -webkit-box-shadow: 0 15px 10px #777;
+  -moz-box-shadow: 0 15px 10px #777;
+  box-shadow: 0 15px 10px #777;
+  -webkit-transform: rotate(-3deg);
+  -moz-transform: rotate(-3deg);
+  -o-transform: rotate(-3deg);
+  -ms-transform: rotate(-3deg);
+  transform: rotate(-3deg);
+}
+
+#container .parallax .scene .shadow:after{
+    -webkit-transform: rotate(3deg);
+  -moz-transform: rotate(3deg);
+  -o-transform: rotate(3deg);
+  -ms-transform: rotate(3deg);
+  transform: rotate(3deg);
+  right: -8px;
+  left: auto;
+
+}
+
+
+
+
+
+/********* Illustrations *********/
+
+#container .parallax .scene .illustrations{
+    position: absolute;
+    display: block;
+    left:70%;/*1200px;*/
+    background-image: url(../datas/img/background/Fond-Illustrations.jpg);
+    background-repeat: no-repeat;
+    width: 720px;
+    height:480px;
+/*    background-size: 100%;*/
+    z-index: -5;
+}
+
+
+#container .parallax .scene .illustrations h1{
+    position: absolute;
+    top:230px;
+    left:400px;
+    font-family:'Sketch Nice', Arial;
+    font-size:3em;
+    cursor: pointer;
+}
+
+#container .parallax .scene .illustrations #illustration_1{
+    left:260px;
+    top:300px;
+    position: absolute;
+    z-index: 1;
+}
+
+#container .parallax .scene .illustrations #illustration_2{
+    left:160px;
+    top:100px;
+    position: absolute;
+    z-index: 2;
+}
+
+#container .parallax .scene .others_illustrations{
+    display: none;
+    padding: 10px;
+    /*-webkit-transition: top 1.3s ease 0s;
+    -moz-transition: top 1.3s ease 0s;
+    transition: top 1.3s ease 0s;*/
+}
+
+#container .parallax .scene .others_illustrations > *{
+    display: inline-block;
+    /*-webkit-transition: top 1.3s ease 0s;
+    -moz-transition: top 1.3s ease 0s;
+    transition: top 1.3s ease 0s;*/
+}
+
+/********* Logo *********/
+#container .parallax .scene .logo{
+    position: absolute;
+    left:40%; /* 520px */
+    top:-5%; /* 50px */
+    z-index: -5;
+}
+
+#container .parallax .scene .logo h1{
+    position: absolute;
+    top:230px;
+    left:0px;
+    font-size:3em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: rgba(0,0,0,0.3);
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+
+
+#container .parallax .scene .logo #logo1{
+    /*left:260px;
+    top:300px;*/
+    position: absolute;
+    z-index: 1;
+}
+
+#container .parallax .scene .logo #logo2{
+    left:160px;
+    top:100px;
+    position: absolute;
+    z-index: 2;
+}
+/********* Site web *********/
+#container .parallax .scene .site{
+    position: absolute;
+    left:-8%; /*-150px*/
+    top:2%; /*100px*/
+    z-index: -5;
+}
+
+#container .parallax .scene .site h1{
+   position: absolute;
+    top:260px;
+    left:420px;
+    font-size:3em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: rgba(0,0,0,0.3);
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+
+
+#container .parallax .scene .site #web1{
+    /*left:260px;
+    top:300px;*/
+    position: absolute;
+    z-index: 1;
+}
+
+#container .parallax .scene .site #web2{
+    left:160px;
+    top:100px;
+    position: absolute;
+    z-index: 2;
+}
+/********* Retouches photos *********/
+#container .parallax .scene .retouche{
+    position: absolute;
+    left:13%; /*170px*/
+    top:45%; /*500px*/
+    z-index: -5;
+}
+
+#container .parallax .scene .retouche h1{
+/*   position: absolute;*/
+    top:260px;
+    left:400px;
+    font-size:3em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: rgba(0,0,0,0.3);
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+
+#container .parallax .scene .retouche #retouche1{
+    /*left:260px;
+    top:300px;*/
+    position: absolute;
+    z-index: 1;
+}
+
+#container .parallax .scene .retouche #retouche2{
+    left:160px;
+    top:100px;
+    position: absolute;
+    z-index: 2;
+}
+
+/********* Mise en page *********/
+#container .parallax .scene .miseenpage{
+    position: absolute;
+    left:70%;/*1170px*/
+    top:75%; /*850px*/
+    z-index: -5;
+}
+
+#container .parallax .scene .miseenpage h1{
+/*   position: absolute;*/
+    top:260px;
+    left:400px;
+    font-size:3em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: rgba(0,0,0,0.3);
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+
+#container .parallax .scene .miseenpage #page1{
+    /*left:260px;
+    top:300px;*/
+    position: absolute;
+    z-index: 1;
+}
+
+#container .parallax .scene .miseenpage #page2{
+    left:160px;
+    top:100px;
+    position: absolute;
+    z-index: 2;
+}
+/********* Packaging CD *********/
+#container .parallax .scene .packaging{
+    position: absolute;
+    left:45%; /*760px*/
+    top:45%; /*450px*/
+    z-index: -5;
+}
+
+#container .parallax .scene .packaging h1{
+   position: absolute;
+    top:10px;
+    left:240px;
+    font-size:3em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: rgba(0,0,0,0.3);
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+
+#container .parallax .scene .packaging #CD1{
+    left:0px;
+    top:0px;
+    position: absolute;
+    z-index: 1;
+}
+
+#container .parallax .scene .packaging #CD2{
+    left:168px;
+    top:140px;
+    position: absolute;
+    z-index: 2;
+}
+/********************************/
+/********* CSS MAIN *************/
+/********************************/
+.main-fixed{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: middle;
+}
+
+.main-fixed nav#nav{
+    position: fixed;
+    top:75%; /*510px*/
+    left:3%;
+    width:550px;
+/*    height: 30px;*/
+    display: block;
+    z-index: 1600;
+}
+
+ nav ul{
+    height: 100%;
+/*    padding: 0px 5px 0px 20px;*/
+    margin-top: 10px;
+    font-size: 1.4em;
+}
+
+ nav ul li{
+    display: inline-block;
+    height: 100%;
+    cursor: pointer;
+    color: black;
+/*    margin-left: 5px;*/
+    padding-right: 10px;
+}
+
+ nav ul li+li{
+    border-left: solid 1px;
+    padding-left: 10px;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: black;
+    text-transform: uppercase;
+}
+
+nav ul li a:hover{
+    color: white;
+}
+
+nav img{
+    width:500px;
+}
+
+nav ul li a.active{
+    color: white;
+}
+/********************************/
+/********* CSS CANVAS ***********/
+/********************************/
+canvas{
+    /*position: absolute;
+	top: 74.5%; 510px
+	left: 234px;
+    z-index: 1100;*/
+    display: none;
+}
+
+
+
+/********************************/
+/********* CSS CONTACT ***********/
+/********************************/
+#contact{
+    position: fixed; /*absolute*/
+    background-color: #e0d7d2;
+    -webkit-transition: top 1.3s ease 0s;
+    -moz-transition: top 1.3s ease 0s;
+    transition: top 1.3s ease 0s;
+    z-index: 1500;
+    backface-visibility: hidden;
+    background-color: #e0d7d2;
+}
+
+
+
+/********* Back to top *********/
+#back-top {
+    position: fixed;
+    right: 40px;
+    bottom: 30px;
+}
+
+#back-top a {
+	display: block;
+	text-align: center;
+	text-transform: uppercase;
+	text-decoration: none;
+	color: #bbb;
+}
+
+
+#back-top a i:hover {
+	color: #000;
+}
+
+/* arrow icon (span tag) */
+#back-top a i{
+	/* transition */
+	-webkit-transition: 1s;
+	-moz-transition: 1s;
+	transition: 1s;
+}
+
+
+
+/********* Infos : Coord+Map *********/
+#informations{
+/*    background-color: white;*/
+    position: absolute;
+    top:25%;
+    height:300px;
+    width:30%;
+    bottom: 130px;
+    right:80px;
+    padding: 20px;
+}
+
+/********* Map *********/
+#contact #map { 
+    height: 230px;
+    width: 100%;
+}
+
+
+/********* Coordonnées *********/
+#contact #coordonnes{
+    
+}
+
+#contact #coordonnes #adresse, #contact #coordonnes #horaire{
+    float: left;
+    width: 50%;
+}
+
+
+/********* Formulaire *********/
+#contact #formulaire{
+    position: absolute;
+    top:25%;
+    left:100px;
+    /*background-color: white;*/
+    padding: 20px;
+    width: 55%;
+    min-width: 55%;
+}
+
+#contact #formulaire .ligne{
+    width: 100%;
+    overflow: hidden;
+}
+
+#contact #formulaire .ligne .premier{
+    width: 45%;
+    float: left;
+}
+
+#contact #formulaire .ligne .second{
+    margin-left: 50%;
+    width: 45%;
+}
+
+#contact #formulaire .form-group{
+    margin-bottom: 15px;
+}
+
+#contact #formulaire .form-group input,#contact #formulaire .form-group textarea, #contact #formulaire .form-group select{
+    background-color: #FFFFFF;
+    border: medium solid transparent;
+    padding: 9px 10px;
+    border-color: transparent;
+    font-size: 14px;
+    width: 100%;
+}
+
+#contact #formulaire .form-group textarea{
+/*    height: 100px;*/
+    background-color: #FFFFFF;
+    border: medium solid transparent;
+    padding: 9px 10px;
+    border-color: transparent;
+    font-size: 14px;
+    width:96%;
+    resize: none;
+}
+
+#contact #formulaire .form-group select{
+    appearance:none;
+    -moz-appearance:none; /* Firefox */
+    -webkit-appearance:none; /* Safari and Chrome */
+    background: url(../datas/img/pics/expand22.png) no-repeat right #ffffff;
+}
+
+#contact #formulaire button[type='submit']{
+    width:80px;
+    height:40px;
+    cursor: pointer;
+    background:none;
+    border:none;
+    margin: 0;
+    padding: 0;
+}
+
+#contact #formulaire .submit{
+    text-align: right;
+    margin-right: 20px;
+}
+
+#contact #formulaire button[type='submit']:before{
+    content:"\003e"; 
+   padding-right: 10px;
+}
+
+
+
+
+
+/********************************/
+/********* CSS OVERVIEW ***********/
+/********************************/
+
+/********* General *********/
+#overview{
+    position: fixed; /*absolute*/
+    overflow-y: scroll;
+    text-align: center;
+    transition: left 1s ease 0s;
+    -webkit-transition: left 1s ease 0s;
+    -moz-transition: left 1s ease 0s;
+    z-index: 1500;
+    backface-visibility: hidden;
+    background-color: #e0d7d2;
+}
+
+#overview #projects{
+    width: 80%;
+    margin: auto;
+    max-width: 1200px;
+}
+
+#overview #back{
+    position: fixed;
+    left: 10px;
+    top: 10px;
+}
+
+#overview #back a{
+    display: block;
+	text-align: center;
+	text-transform: uppercase;
+	text-decoration: none;
+	color: #bbb;
+}
+
+#overview #back i:hover{
+    color: #000;
+}
+
+/* arrow icon (span tag) */
+#overview #back a i{
+	/* transition */
+	-webkit-transition: 1s;
+	-moz-transition: 1s;
+	transition: 1s;
+}
+
+/********* Header *********/
+#overview .header{
+    margin-bottom: 80px;
+}
+
+#overview .header #vignette{
+    float: left;
+    width: 20%;
+    height: 100%;
+}
+
+#overview .header #vignette img{
+    height: 100%;
+    max-width: 100%;
+}
+
+#overview .header #description{
+    width: 78%;
+    text-align: justify;
+    margin-left: 22%;
+}
+
+#overview .header #description h1{
+    text-align: left;
+    font-size: 3em;
+    text-transform: uppercase;
+    margin-bottom: 1.5px;
+    line-height: 1;
+}
+
+#overview .header #description h2{
+    font-size: 1.5em;
+    font-weight: 700;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+#overview figcaption.legend{
+    font-size: 1.5em;
+    font-weight: 300;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+
+#overview .header #description p{
+    font-size: 1em;
+}
+
+#overview #projects figure{
+    margin-bottom: 140px;
+}
+
+
+#overview #projects figure:last-child{
+    margin-bottom: 400px;
+}
+
+#overview #projects blockquote{
+    float: none;
+    display:block;
+    padding: 15px 20px 15px 45px;
+    margin: 20px 0 0px;
+    position: relative;
+    text-align: justify;
+
+    /*Borders - (Optional)*/
+    border-left: 15px solid #c76c0c;
+    border-right: 2px solid #c76c0c;
+
+    /*Box Shadow - (Optional)*/
+    -moz-box-shadow: 2px 2px 15px #ccc;
+    -webkit-box-shadow: 2px 2px 15px #ccc;
+    box-shadow: 2px 2px 15px #ccc;
+}
+
+
+#overview #projects blockquote::before{
+    content: "\201C"; /*Unicode for Left Double Quote*/
+
+    /*Font*/
+    font-family: Georgia, serif;
+    font-size: 60px;
+    font-weight: bold;
+    color: #999;
+
+    /*Positioning*/
+    position: absolute;
+    left: 10px;
+    top:5px;
+}
+
+#overview #projects blockquote::after{
+    /*Reset to make sure*/
+    content: "";
+}
+
+
+/********* Avant-Après *********/
+#overview #projects .twenty{
+    width: 60%;
+    margin: auto;
+    margin-bottom: 140px;
+}
+
+#overview #projects .avant-apres{
+    width: 100%;
+    height: 100%;
+}
+
+
+/********* Affiche/Image *********/
+#overview #projects figure.soixante-dix img{
+    height: 100%; 
+}
+
+
+/********* Digipack *********/
+#overview #projects figure.digipack{
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#overview #projects figure.digipack .cycle{
+    width: 100%;
+    background-repeat: no-repeat;
+
+}
+
+
+/********* Brochures *********/

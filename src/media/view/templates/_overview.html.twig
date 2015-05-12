@@ -1,0 +1,66 @@
+<!-- OVERVIEW -->
+    <div id='overview' >
+        <!-- BUTTON BACK -->
+        <div id='back'>
+            <a href="#">
+                <i class="fa fa-arrow-up fa-3x fa-rotate-270"></i>
+            </a>
+        </div>
+        
+        <!-- PROJETS -->
+        <div id='projects'>
+            <!-- PROJETS -->
+            {% for projet in projets %}
+                <div id='{{projet.id}}'>
+                    <!-- HEADER -->
+                    <div class="header">
+                        <div id='vignette'>
+                            {% for image in images if projet.id == image.id_projet and image.type == 'vignette' %}
+                                <img class="lazy" src="#" data-original="{{rootUri}}/src/media/assets/datas/img/{{image.nom_dossier}}/{{image.nom_image}}.{{image.extension_image}}" />
+                            {% endfor %}
+                        </div>
+                        <div id='description'>
+                            <h1>{{projet.titre}}</h1>
+                            <h2>{{projet.soustitre}}</h2>
+                            <p>{{projet.description}}</p>
+                            <blockquote>{{projet.citation}}</blockquote>
+                            
+                        </div>
+                    </div>
+
+
+
+                    <!-- AVANT APRES -->
+                        {% for image in images if projet.id == image.id_projet and image.type == 'retouche' %}
+                            <figure class="twenty">
+                                <figcaption class="legend">{{image.titre}}</figcaption>
+                                <div class="avant-apres">
+                                    {% for retouche in retouches if retouche.id_images == image.id %}
+                                         <!-- The before image is first -->
+                                         <img src="{{rootUri}}/src/media/assets/datas/img/{{retouche.nom_dossier}}/{{retouche.nom_image}}.{{retouche.extension_image}}" />
+                                    {% endfor %}
+                                </div>
+                            </figure>
+                        {% endfor %}
+                        
+                        
+                        {% for image in images if projet.id == image.id_projet and image.type == 'affiche' %}
+                            <!-- OTHERS PICTURES -->    
+                             <figure class="soixante-dix">
+                                 <figcaption class="legend">{{image.titre}}</figcaption>
+                                <img class="lazy" src="#" data-original="{{rootUri}}/src/media/assets/datas/img/{{image.nom_dossier}}/{{image.nom_image}}.{{image.extension_image}}" />
+                            </figure>
+                        {% endfor %}
+                        
+
+                        {% for image in images if projet.id == image.id_projet and image.type == 'digipack' %}
+                            <!-- DIGIPACK -->
+                             <figure class="digipack">
+                                 <figcaption class="legend">{{image.titre}}</figcaption>
+                                <div class="cycle" style="background:url({{rootUri}}/src/media/assets/datas/img//{{image.nom_dossier}}/{{image.nom_image}}.{{image.extension_image}}) center center;height:410px"></div>
+                             </figure>
+                        {% endfor %}
+                </div>
+            {% endfor %}
+        </div>
+    </div>

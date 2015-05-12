@@ -1,0 +1,21 @@
+{
+    "name": "vendor/voovoyez",
+    "description": "Portfolio Atelier Voovoyez",
+    "authors": [
+        {
+            "name": "Atelier Voovoyez",
+            "email": "voovoyez@voovoyez.fr"
+        }
+    ],
+    "require": {
+         "slim/slim": "2.*",
+        "illuminate/database": "~4.2",
+        "twig/twig": "~1.0",
+        "codeguy/upload": "*"
+    },
+    "autoload":{
+        "psr-0" : {
+            "media\\" : "src"
+        }
+    }
+}
