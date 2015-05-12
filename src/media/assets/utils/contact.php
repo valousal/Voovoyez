@@ -1,6 +1,6 @@
 <?php
 
-$to = 'bmxstar_@hotmail.fr'; // Replace with your email address
+$to = 'mail'; // Replace with your email address
 
 // No need to edit below this line
 if($to) {
