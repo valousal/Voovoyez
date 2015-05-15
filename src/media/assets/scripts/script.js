@@ -137,6 +137,7 @@ $(document).ready(function () {
         $('#container').show();
         $('#overview').css({position:'fixed', left:'105%'});
         $('body').css('cursor','');
+        $('#link-realisation').addClass('active');
         
         return false;
     });
@@ -206,7 +207,7 @@ $(document).ready(function () {
 
 
     //afficher grid pour chaque theme, titre cliquable
-    /*(function($){
+    (function($){
          $.fn.extend({
               center: function (options) {
                    var options =  $.extend({ // Default values
@@ -219,40 +220,67 @@ $(document).ready(function () {
                         horizontal:true // booleen, center horizontal
                    }, options);
                    return this.each(function() {
-                        var props = {position:'absolute'};
+                        var props = {position:'relative'};
                         if (options.vertical) {
-                             // var top = ($(options.inside).height() - $(this).outerHeight()) / 2;
-                             var top = 50;
+                             var top = ($(options.inside).height() - $(this).outerHeight()) / 2;
+                             // var top = 50;
                              if (options.withScrolling) top += $(options.inside).scrollTop() || 0;
                              top = (top > options.minY ? top : options.minY);
                              $.extend(props, {top: top+'px'});
                         }
                         if (options.horizontal) {
-                              // var left = ($(options.inside).width() - $(this).outerWidth()) / 2;
-                              var left = $(options.inside).width()  / 2;
+                              var left = ($(options.inside).width() - $(this).outerWidth()) / 2;
+                              // var left = $(options.inside).width()  / 2;
                               if (options.withScrolling) left += $(options.inside).scrollLeft() || 0;
                               left = (left > options.minX ? left : options.minX);
                               $.extend(props, {left: left+'px'});
                         }
-                        if (options.transition > 0) $(this).animate(props, options.transition);
-                        else $(this).css(props);
+                        if (options.transition > 0){
+                            $(this).animate(props, options.transition);
+                        }else{
+                            $(this).css(props);
+                        }
+
+                        //disable parallax
+                        $scene.parallax('disable');
+
+                        // Button close
+                        $('.close').show().css({position:'absolute',top:'10px',left:'10px',cursor:'pointer'});
+
+                        //deplacer autre div theme
+                        var position = $(this).position();
+                        $(this).siblings().each(function(){
+                            var topAfter = $(this).position().top + (top - position.top);
+                            var leftAfter = $(this).position().left + (left - position.left);
+                            $(this).animate({top:topAfter,left:leftAfter},options.transition);
+                        });
+                        
+                        // Return
                         return $(this);
                    });
               }
          });
-    })(jQuery);*/
+    })(jQuery);
 
 
-    var next_move = "expand";
+    /*var next_move = "expand";
     var centerLayer = function(top,left){
         var css = {};
             if (next_move == "expand"){
+                // console.log(($(window).height() - $('li.layer:nth-child(2)').outerHeight()) / 2);
                 css = {
-                    top : top+'%',
+                    // top : top+'%',
+                    top: ($(window).height() - $('li.layer:nth-child(2)').outerHeight()) / 2,
                     left: left+'%'
                 };
                 next_move = "shrink";
+                // stop parallax
                 $scene.parallax('disable');
+                // opacity background
+
+                // button close
+                // $('#container').prepend('<i class="fa fa-times fa-2x close"></i>');
+                $('.close').show().css({position:'absolute',top:'10px',left:'10px',cursor:'pointer'});
             }else{
                 css = {
                     top:0,
@@ -262,49 +290,123 @@ $(document).ready(function () {
                 $scene.parallax('enable');
             }
             $('li.layer:nth-child(2)').animate(css, 500);
+    }*/
+
+
+    // On renvoie un nombre aléatoire entre une valeur min (incluse) 
+    // et une valeur max (exclue)
+    function getRandomInt(min, max) {
+        return Math.floor(Math.random() * (max - min)) + min;
+    }
+
+    // sortir de l'écran les autres vignettes pour ensuite les afficher avec l'animation
+    var random = function(vitesse){
+        var i = 0;
+        $('#container .others div.ma_taille').each(function(){ /*:lt(16)*/
+            if (i == 0) {
+                $(this).animate({
+                    left: getRandomInt(100,300)+'%',
+                    top: getRandomInt(100,300)+'%',
+                },vitesse);
+            }
+            else if (i == 1) {
+                $(this).animate({
+                    left: getRandomInt(-100,-300)+'%',
+                },vitesse);
+            }
+            else if (i == 2) {
+                $(this).animate({
+                    left: getRandomInt(100,300)+'%', 
+                    top: getRandomInt(-100,-300)+'%',
+                },vitesse);
+            }
+            else if (i == 3) {
+                $(this).animate({
+                    bottom: getRandomInt(-100,-300)+'%',
+                    left: getRandomInt(100,300)+'%',
+                },vitesse);
+                i = -1;
+            }else{
+                $(this).animate({
+                    left: getRandomInt(100,300)+'%',
+                    top: getRandomInt(100,300)+'%',
+                },vitesse);
+            }
+            i++;
+        });
     }
 
 
-    
+    // Fonction pour afficher les vignette avec l'animation
+    random(0);
+    var afficher = function(divClass, show){
+        if (show == 'show'){
+            var selector = "#container "+divClass;
+            $(selector).show();
+            var delay = 0;
+            var selector2 = "#container " + divClass + " div.ma_taille";
+            $(selector2).each(function(){ 
+                $(this).animate({ /*.delay(delay)*/
+                    left:'0%',
+                    top:'0%',
+                    right:'0%',
+                    bottom:'0%'
+                },900);
+
+                $(this).css({display:'inline-block'});
+                // delay += 500;
+            });
+        }else { /*if(show =='no-show')*/
+            random(900);
+            var selector = "#container "+divClass;
+            $(selector).delay(900).hide(0); 
+            $(selector +'> *').delay(900).hide(0);
+        }
+    }
+
     $('.illustrations h1').click(function () {
-        // $('#container .parallax .scene .illustrations .ma_taille:nth-child(n+4)').css({display:'inline-block'});
-        centerLayer('-17','-20');
-        // $('#container .parallax .scene .illustrations .others_illustrations').show();
+        // centerLayer('-31','-31');
+        $('.illustrations').center();
+        afficher('.others_illustrations', 'show');
     });
 
 
     $('.logo h1').click(function () {
-        // $('#container .parallax .scene .illustrations .ma_taille:nth-child(n+4)').css({display:'inline-block'});
-        centerLayer('-5','6');
+        // centerLayer('-35','-5');
+        $('.logo').center();
 
     });
 
     $('.site h1').click(function () {
-        // $('#container .parallax .scene .illustrations .ma_taille:nth-child(n+4)').css({display:'inline-block'});
-        centerLayer('-5','43');
+        // centerLayer('-65','-3');
+        $('.site').center();
 
     });
 
     $('.packaging h1').click(function () {
-        // $('#container .parallax .scene .illustrations .ma_taille:nth-child(n+4)').css({display:'inline-block'});
-        centerLayer('-40','5');
-
+        // centerLayer('-60','-41');
+        $('.packaging').center();
     });
 
     $('.retouche h1').click(function () {
-        // $('#container .parallax .scene .illustrations .ma_taille:nth-child(n+4)').css({display:'inline-block'});
-        centerLayer('-40','27');
-
+        // centerLayer('-8','22');
+        $('.retouche').center();
     });
 
     $('.miseenpage h1').click(function () {
-        // $('#container .parallax .scene .illustrations .ma_taille:nth-child(n+4)').css({display:'inline-block'});
-        centerLayer('-60','-15');
-
+        // centerLayer('-30','32');
+        $('.miseenpage').center();
     });
 
 
-
+    $('.close').click(function () {
+        $('li.layer:nth-child(2) > div').each(function(){
+            $(this).removeAttr( 'style' );
+        });
+        afficher('.others','no-show');
+        $(this).hide();
+        $scene.parallax('enable');
+    });
 
 
 });

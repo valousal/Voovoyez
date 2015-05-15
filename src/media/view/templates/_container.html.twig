@@ -1,6 +1,6 @@
 <!-- CONTAINER -->
     <div id="container" class="container">
-
+        <i class="fa fa-times fa-2x close" style='display:none'></i>
         <!-- PARALLAX -->
         <div class='parallax'>
             <ul id="scene" class="scene">
@@ -48,26 +48,6 @@
                                     </div>
                                 </div>
                             </div>
-
-                            <div class='others_illustrations'>
-                                {% for image in images if image.type == 'thumb' and image.id_categorie == 1 %}
-                                    <!-- Illustration avec hover -->
-                                    <div class='ma_taille'  id='illustration{{image.id}}'>
-                                        <div class="shadow">
-                                            <div class='view view-first'>
-
-                                                <img src="{{rootUri}}/src/media/assets/datas/img/Thumb/small/{{image.nom_image}}_thumb.{{image.extension_image}}" class='img'>
-                                                <div class="mask">
-                                                    <!--<p>Bonjour</p>-->
-                                                    <a class="fancybox zoom" rel="illustrations" href="{{rootUri}}/src/media/assets/datas/img/{{image.nom_dossier}}/big/{{image.nom_image}}.{{image.extension_image}}"><img src='{{rootUri}}/src/media/assets/datas/img/pics/add121.png'></a>
-                                                    <a href="#{{image.id_projet}}" class="info">Le projet</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                {% endfor %}
-                            </div>
                     </div>
 
 
@@ -78,7 +58,7 @@
                         <div class='ma_taille' id='logo1'>
                             <div class="shadow">
                                 <div class='view view-first'>
-                                    <img src="{{rootUri}}/src/media/assets/datas/img/Thumb/small/POSTER-Madeleine.jpg" class='img'>
+                                    <img src="{{rootUri}}/src/media/assets/datas/img/Thumb/small/PASTA_ill_thumb.jpg" class='img'>
                                     <div class="mask">
                                         <!--<p>Bonjour</p>-->
                                         <a class="fancybox zoom" rel="logo" href="{{rootUri}}/src/media/assets/datas/img/Thumb/big/POSTER-Madeleine.jpg"><img src='{{rootUri}}/src/media/assets/datas/img/pics/add121.png'></a>
@@ -91,7 +71,7 @@
                         <div class='ma_taille' id='logo2'>
                             <div class="shadow">
                                 <div class='view view-first'>
-                                    <img src="{{rootUri}}/src/media/assets/datas/img/Thumb/small/POSTER-Madeleine.jpg" class='img'>
+                                    <img src="{{rootUri}}/src/media/assets/datas/img/Thumb/small/FLUNCH_ill_thumb.jpg" class='img'>
                                     <div class="mask">
                                         <!--<p>Bonjour</p>-->
                                         <a class="fancybox zoom" rel="illustrations" href="{{rootUri}}/src/media/assets/datas/img/Thumb/big/POSTER-Madeleine.jpg"><img src='{{rootUri}}/src/media/assets/datas/img/pics/add121.png'></a>
@@ -112,7 +92,7 @@
                         <div class='ma_taille' id='web1'>
                             <div class="shadow">
                                 <div class='view view-first'>
-                                    <img src="{{rootUri}}/src/media/assets/datas/img/Thumb/small/POSTER-Madeleine.jpg" class='img'>
+                                    <img src="{{rootUri}}/src/media/assets/datas/img/Thumb/small/FLUNCH_ill_thumb.jpg" class='img'>
                                     <div class="mask">
                                         <!--<p>Bonjour</p>-->
                                         <a class="fancybox zoom" rel="illustrations" href="{{rootUri}}/src/media/assets/datas/img/Thumb/big/POSTER-Madeleine.jpg"><img src='{{rootUri}}/src/media/assets/datas/img/pics/add121.png'></a>
@@ -127,7 +107,7 @@
                         <div class='ma_taille' id='web2'>
                             <div class="shadow">
                                 <div class='view view-first'>
-                                    <img src="{{rootUri}}/src/media/assets/datas/img/Thumb/small/POSTER-Madeleine.jpg" class='img'>
+                                    <img src="{{rootUri}}/src/media/assets/datas/img/Thumb/small/PASTA_ill_thumb.jpg" class='img'>
                                     <div class="mask">
                                         <!--<p>Bonjour</p>-->
                                         <a class="fancybox zoom" rel="illustrations" href="{{rootUri}}/src/media/assets/datas/img/Thumb/big/POSTER-Madeleine.jpg"><img src='{{rootUri}}/src/media/assets/datas/img/pics/add121.png'></a>
@@ -148,7 +128,7 @@
                         <div class='ma_taille' id='retouche1'>
                             <div class="shadow">
                                 <div class='view view-first'>
-                                    <img src="{{rootUri}}/src/media/assets/datas/img/Thumb/small/POSTER-Madeleine.jpg" class='img'>
+                                    <img src="{{rootUri}}/src/media/assets/datas/img/Thumb/small/FLUNCH_ill_thumb.jpg" class='img'>
                                     <div class="mask">
                                         <!--<p>Bonjour</p>-->
                                         <a class="fancybox zoom" rel="illustrations" href="{{rootUri}}/src/media/assets/datas/img/Thumb/big/POSTER-Madeleine.jpg"><img src='{{rootUri}}/src/media/assets/datas/img/pics/add121.png'></a>
@@ -163,7 +143,7 @@
                         <div class='ma_taille' id='retouche2'>
                             <div class="shadow">
                                 <div class='view view-first'>
-                                    <img src="{{rootUri}}/src/media/assets/datas/img/Thumb/small/POSTER-Madeleine.jpg" class='img'>
+                                    <img src="{{rootUri}}/src/media/assets/datas/img/Thumb/small/FLUNCH_ill_thumb.jpg" class='img'>
                                     <div class="mask">
                                         <!--<p>Bonjour</p>-->
                                         <a class="fancybox zoom" rel="illustrations" href="{{rootUri}}/src/media/assets/datas/img/Thumb/big/POSTER-Madeleine.jpg"><img src='{{rootUri}}/src/media/assets/datas/img/pics/add121.png'></a>
@@ -184,7 +164,7 @@
                         <div class='ma_taille' id='page1' >
                             <div class="shadow">
                                 <div class='view view-first'>
-                                    <img src="{{rootUri}}/src/media/assets/datas/img/Thumb/small/POSTER-Madeleine.jpg" class='img'>
+                                    <img src="{{rootUri}}/src/media/assets/datas/img/Thumb/small/FLUNCH_ill_thumb.jpg" class='img'>
                                     <div class="mask">
                                         <!--<p>Bonjour</p>-->
                                         <a class="fancybox zoom" rel="illustrations" href="{{rootUri}}/src/media/assets/datas/img/Thumb/big/POSTER-Madeleine.jpg"><img src='{{rootUri}}/src/media/assets/datas/img/pics/add121.png'></a>
@@ -199,7 +179,7 @@
                         <div class='ma_taille' id='page2'>
                             <div class="shadow">
                                 <div class='view view-first'>
-                                    <img src="{{rootUri}}/src/media/assets/datas/img/Thumb/small/POSTER-Madeleine.jpg" class='img'>
+                                    <img src="{{rootUri}}/src/media/assets/datas/img/Thumb/small/PASTA_ill_thumb.jpg" class='img'>
                                     <div class="mask">
                                         <!--<p>Bonjour</p>-->
                                         <a class="fancybox zoom" rel="illustrations" href="{{rootUri}}/src/media/assets/datas/img/Thumb/big/POSTER-Madeleine.jpg"><img src='{{rootUri}}/src/media/assets/datas/img/pics/add121.png'></a>
@@ -220,7 +200,7 @@
                         <div class='ma_taille' id='CD1'>
                             <div class="shadow">
                                 <div class='view view-first'>
-                                    <img src="{{rootUri}}/src/media/assets/datas/img/Thumb/small/POSTER-Madeleine.jpg" class='img'>
+                                    <img src="{{rootUri}}/src/media/assets/datas/img/Thumb/small/FLUNCH_ill_thumb.jpg" class='img'>
                                     <div class="mask">
                                         <!--<p>Bonjour</p>-->
                                         <a class="fancybox zoom" rel="illustrations" href="{{rootUri}}/src/media/assets/datas/img/Thumb/big/POSTER-Madeleine.jpg"><img src='{{rootUri}}/src/media/assets/datas/img/pics/add121.png'></a>
@@ -235,7 +215,7 @@
                         <div class='ma_taille' id='CD2'>
                             <div class="shadow">
                                 <div class='view view-first'>
-                                    <img src="{{rootUri}}/src/media/assets/datas/img/Thumb/small/POSTER-Madeleine.jpg" class='img'>
+                                    <img src="{{rootUri}}/src/media/assets/datas/img/Thumb/small/PASTA_ill_thumb.jpg" class='img'>
                                     <div class="mask">
                                         <!--<p>Bonjour</p>-->
                                         <a class="fancybox zoom" rel="illustrations" href="{{rootUri}}/src/media/assets/datas/img/Thumb/big/POSTER-Madeleine.jpg"><img src='{{rootUri}}/src/media/assets/datas/img/pics/add121.png'></a>
@@ -250,6 +230,29 @@
             </ul>
         </div>
         <!-- FIN PARALLAX -->
+
+
+
+        <!-- OTHERS -->
+        <div class='others_illustrations others'>
+            {% for image in images if image.type == 'thumb' and image.id_categorie == 1 %}
+                <!-- Illustration avec hover -->
+                <div class='ma_taille'  id='illustration{{image.id}}'>
+                    <div class="shadow">
+                        <div class='view view-first'>
+
+                            <img src="{{rootUri}}/src/media/assets/datas/img/Thumb/small/{{image.nom_image}}_thumb.{{image.extension_image}}" class='img'>
+                            <div class="mask">
+                                <!--<p>Bonjour</p>-->
+                                <a class="fancybox zoom" rel="illustrations" href="{{rootUri}}/src/media/assets/datas/img/{{image.nom_dossier}}/big/{{image.nom_image}}.{{image.extension_image}}"><img src='{{rootUri}}/src/media/assets/datas/img/pics/add121.png'></a>
+                                <a href="#{{image.id_projet}}" class="info">Le projet</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            {% endfor %}
+        </div>
     </div>
     <!-- FIN CONTAINER -->
 
@@ -259,4 +262,4 @@
 
     <!-- CANVAS -->
     <canvas id="eyes"></canvas>
-    <!-- FIN CANVAS
+    <!-- FIN CANVAS -->
