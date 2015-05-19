@@ -8,7 +8,8 @@ body{
     height: 100%;
     overflow: hidden;
     width:100%;
-    background-color: #e0d7d2;
+    /*background-color: #e0d7d2;*/
+    background-color: rgba(224,215,210,1);
     cursor:url(../datas/img/pics/pointer32.png), auto;
     margin-left: 0;
     font-family: "Lato",sans-serif;
@@ -21,8 +22,20 @@ body{
 #container{
     width: 100%;
     height: 100%;
+    position: absolute;
+    z-index: -1002;
 }
 
+.overlay{
+    background: black;
+    opacity: .5;
+    position:fixed;
+    top:0px;
+    bottom:0px;
+    left:0px;
+    right:0px;
+    z-index:100;
+}
 
 /********************************/
 /******* CSS PARALLAX ***********/
@@ -81,8 +94,8 @@ body{
 
 #container .parallax .scene .background{
 /*    background: url("../datas/img/background.jpg") no-repeat scroll 50% 100% / cover transparent;*/
-    background-color: #e0d7d2;
-    
+   background-color: rgba(224,215,210,1);/*#e0d7d2;*/
+    opacity: 0.3;
     position: absolute;
     width: 120%;
 /*    height: 100%;*/
@@ -146,7 +159,7 @@ body{
     left:80%;
     background-image: url(../datas/img/background/Fond-Illustrations.jpg);
     background-repeat: no-repeat;
-    width: 720px;
+    width: 920px;
     height:480px;
     z-index: -5;
 }
@@ -203,26 +216,26 @@ body{
     left:160px;
     top:20px;
     position: absolute;
-    z-index: 1;
+    z-index: 2;
 }
 
 #container .parallax .scene .logo #logo2{
     left:0px;
     top:150px;
     position: absolute;
-    z-index: 2;
+    z-index: 1;
 }
 /********* Site web *********/
 #container .parallax .scene .site{
     position: absolute;
     left:42%; /*-150px*/
-    top:65%; /*100px*/
+    top:75%; /*100px*/
     z-index: -5;
 }
 
 #container .parallax .scene .site h1{
    position: absolute;
-    top:230px;
+    top:120px;
     left:30px;
     font-size:3em;
     text-transform: uppercase;
@@ -236,14 +249,14 @@ body{
 
 #container .parallax .scene .site #web1{
     left:0px;
-    top:300px;
+    top:180px;
     position: absolute;
     z-index: 1;
 }
 
 #container .parallax .scene .site #web2{
     left:160px;
-    top:130px;
+    top:50px;
     position: absolute;
     z-index: 2;
 }
@@ -307,14 +320,14 @@ body{
     left:0px;
     top:100px;
     position: absolute;
-    z-index: 2;
+    z-index: 1;
 }
 
 #container .parallax .scene .miseenpage #page2{
     left:160px;
     top:-20px;
     position: absolute;
-    z-index: 1;
+    z-index: 2;
 }
 /********* Packaging CD *********/
 #container .parallax .scene .packaging{
@@ -341,32 +354,66 @@ body{
     left:260px;
     top:0px;
     position: absolute;
-    z-index: 1;
+    z-index: 2;
 }
 
 #container .parallax .scene .packaging #CD2{
     left:145px;
     top:140px;
     position: absolute;
-    z-index: 2;
+    z-index: 1;
 }
 
 /****************************************/
 /********* CSS OTHERS THUMB *************/
 /****************************************/
-#container .others{
+.others{
     display: none;
     margin-left: auto;
     margin-right: auto;
-    width: 80%;
-    text-align: center;
+    width: 70%;
+    text-align: center; /*center*/
+   /*margin-top:100px;*/
+    /*text-align-last:left;
+    -moz-text-align-last:left;*/
+    left: 0%;
+    top: 6%;
+    position: relative;
+    padding: 20px;
+    background-color: #FFEFEF;
+    max-width: 1200px;
+    max-height: 80%;
+    overflow-y:auto;
+    z-index: 20000000;
+    /*border-radius: 10px;*/
 }
 
-#container .others > *{
+.others .ma_taille{
     display: none;
     /*display: inline-block;*/
     padding: 10px;
     position: relative;
+}
+
+.closeButton
+{
+    cursor: pointer;
+    position:relative;
+    display: block;
+    top:0px;
+    right:0px;
+    width:27px;
+    height:27px;
+    background:url('http://cdn-sg1.pgimgs.com/images/pg/close-button.png') no-repeat center center;
+    z-index: 201;
+}
+
+#load{
+    position: absolute;
+    right: 19px;
+    bottom: 5px;
+    color:black;
+    display: block;
 }
 /********************************/
 /********* CSS MAIN *************/
@@ -450,7 +497,9 @@ canvas{
     transition: top 1.3s ease 0s;
     z-index: 1500;
     backface-visibility: hidden;
-    background-color: #e0d7d2;
+    font-family: "Lato",sans-serif;
+    font-weight: 300;
+    overflow-y: scroll;
 }
 
 
@@ -459,7 +508,7 @@ canvas{
 #back-top {
     position: fixed;
     right: 40px;
-    bottom: 30px;
+    bottom: 20px;
 }
 
 #back-top a {
@@ -488,42 +537,77 @@ canvas{
 /********* Infos : Coord+Map *********/
 #informations{
 /*    background-color: white;*/
-    position: absolute;
-    top:25%;
+    /*position: absolute;*/
+    /*bottom:5px;*/
+    display: block;
     height:300px;
-    width:30%;
-    bottom: 130px;
-    right:80px;
-    padding: 20px;
+    width:100%;
 }
 
 /********* Map *********/
 #contact #map { 
-    height: 230px;
+    height: 260px;
     width: 100%;
+    display: block;
+    font-family: "Lato",sans-serif;
+    font-weight: 300;
+    font-size: 1em;
 }
 
 
 /********* Coordonnées *********/
 #contact #coordonnes{
-    
+    display: block;
 }
 
-#contact #coordonnes #adresse, #contact #coordonnes #horaire{
-    float: left;
-    width: 50%;
+#contact #coordonnes .contact-info{
+    /*float: left;*/
+    display: inline-block;
+    width: 33%;
+    margin: 20px 0px;
+    text-align: center;
+}
+
+#contact #coordonnes .contact-info h4{
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+#contact #coordonnes .contact-info i{
+    margin-right: 10px;
+    color: #FFA420;
+    /*background-color: #FFF;*/
+    display: inline-block;
+    padding-top: 3px;
+    text-align: center !important;
+    border-radius: 50%;
 }
 
 
 /********* Formulaire *********/
+#contact #formulaire-contact{
+    display: block;
+    margin-bottom: 100px;
+    margin-top: 15%;
+    margin-left: 3%;
+}
 #contact #formulaire{
-    position: absolute;
-    top:25%;
-    left:100px;
+    /*position: absolute;*/
+    display: inline-block;
     /*background-color: white;*/
-    padding: 20px;
     width: 55%;
-    min-width: 55%;
+    /*min-width: 55%;*/
+}
+
+#contact #accroche{
+   display: inline-block;
+    width: 30%;
+    text-align: center;
+    vertical-align: top;
+    margin-top: 10%;
+    margin-left: 5%;
+    border-bottom: solid 1px;
+    padding-bottom: 20px;
 }
 
 #contact #formulaire .ligne{
@@ -536,40 +620,55 @@ canvas{
     float: left;
 }
 
+#contact #formulaire .ligne:first-child .premier{
+    width: 47%;
+}
+
 #contact #formulaire .ligne .second{
-    margin-left: 50%;
+    margin-left: 51%;
     width: 45%;
 }
 
 #contact #formulaire .form-group{
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 #contact #formulaire .form-group input,#contact #formulaire .form-group textarea, #contact #formulaire .form-group select{
     background-color: #FFFFFF;
     border: medium solid transparent;
-    padding: 9px 10px;
+    /*padding: 9px 10px;*/
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left:10px;
     border-color: transparent;
     font-size: 14px;
     width: 100%;
+    letter-spacing: 0.5px;
 }
 
 #contact #formulaire .form-group textarea{
 /*    height: 100px;*/
     background-color: #FFFFFF;
     border: medium solid transparent;
-    padding: 9px 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left:10px;
     border-color: transparent;
     font-size: 14px;
     width:96%;
     resize: none;
+    font-family: "Lato",sans-serif;
+    font-weight: 300;
 }
 
 #contact #formulaire .form-group select{
     appearance:none;
     -moz-appearance:none; /* Firefox */
     -webkit-appearance:none; /* Safari and Chrome */
-    background: url(../datas/img/pics/expand22.png) no-repeat right #ffffff;
+    background-image: url(../datas/img/pics/expand22.png);
+    background-repeat: no-repeat;
+    background-position: 95%;
+    background-color: #ffffff;
 }
 
 #contact #formulaire button[type='submit']{
@@ -593,7 +692,13 @@ canvas{
 }
 
 
-
+/*********** Footer ***************/
+#footer {
+    position: relative;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 25px 0px;
+}
 
 
 /********************************/

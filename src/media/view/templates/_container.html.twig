@@ -1,6 +1,6 @@
 <!-- CONTAINER -->
     <div id="container" class="container">
-        <i class="fa fa-times fa-2x close" style='display:none'></i>
+        <div class="overlay" id="overlay" style="display:none;"></div>
         <!-- PARALLAX -->
         <div class='parallax'>
             <ul id="scene" class="scene">
@@ -235,6 +235,7 @@
 
         <!-- OTHERS -->
         <div class='others_illustrations others'>
+            <a class="closeButton close"></a>
             {% for image in images if image.type == 'thumb' and image.id_categorie == 1 %}
                 <!-- Illustration avec hover -->
                 <div class='ma_taille'  id='illustration{{image.id}}'>
@@ -252,6 +253,7 @@
                 </div>
 
             {% endfor %}
+            <a href="#" id="load"><i class="fa fa-angle-right fa-rotate-90 fa-3x"></i></a>
         </div>
     </div>
     <!-- FIN CONTAINER -->

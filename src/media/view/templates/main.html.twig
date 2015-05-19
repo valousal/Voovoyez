@@ -33,14 +33,20 @@
     <!--\\\\\\ Script //////-->
     <!-- JQUERY -->
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-    
+    <!-- <script src="{{rootUri}}/src/media/assets/scripts/jquery.js"></script> -->
+
     <!-- Canvas JS - Eyes -->
     <script src="{{rootUri}}/src/media/assets/scripts/animationPolyfill.js"></script>
     <script src="{{rootUri}}/src/media/assets/scripts/eyes.js"></script>
     
     <!-- Mon script -->
+    <script src="{{rootUri}}/src/media/assets/scripts/jquery.translate3d.js"></script>
+    <script src="{{rootUri}}/src/media/assets/scripts/random.js"></script>
+    <script src="{{rootUri}}/src/media/assets/scripts/afficher.js"></script>
+    <script src="{{rootUri}}/src/media/assets/scripts/jquery.center.js"></script>
     <script src="{{rootUri}}/src/media/assets/scripts/script.js"></script>
     <script src="{{rootUri}}/src/media/assets/scripts/verification.js"></script>
+    <script src="{{rootUri}}/src/media/assets/scripts/map.js"></script>
     
     
     <!--\\\\\\ FancyBox //////-->
@@ -88,7 +94,10 @@
     <!--\\\\\\ Panorama ///////-->
     <script type="text/javascript" src="{{rootUri}}/src/media/assets/scripts/jquery.cyclotron.js"></script>
 
-
+    <!--\\\\\\ ScrollBar Malihu///////-->
+    <link rel="stylesheet" href="{{rootUri}}/src/media/assets/styles/jquery.mCustomScrollbar.css" type="text/css" media="screen" />
+    <script type="text/javascript" src="{{rootUri}}/src/media/assets/scripts/jquery.mCustomScrollbar.concat.min.js"></script>
+    
     <!--\\\\\\ Animsition ///////-->
     <!-- animsition CSS -->
     <!-- <link rel="stylesheet" href="{{rootUri}}/src/media/assets/styles/animsition.css"> -->
@@ -101,13 +110,12 @@
     
     <div>
     
-        
-        
-        
+
         {#{% block main %}
            
         {% endblock %}#}
 
+    
 
         <!-- INCLUDE CONTAINER / PARALLAX -->
         {% include "_container.html.twig" %}
@@ -124,9 +132,7 @@
         <!--INCLUDE OVERVIEW -->
         {% include "_overview.html.twig" %}
         <!--END INCLUDE OVERVIEW -->
-        
-        
-        
+
 
     </div>
 
@@ -188,6 +194,18 @@
         $(document).ready(function ($) {
             $('.cycle').cyclotron();
         });
+    </script>
+
+    <script>
+    (function($){
+            $(window).load(function(){
+                $(".others").mCustomScrollbar({
+                    axis: "y",
+                    theme: "minimal",
+                    autoHideScrollbar: true,
+                });
+            });
+        })(jQuery);
     </script>
 
 
