@@ -528,6 +528,19 @@
 
 
 
+@media screen and (max-width: 550px){
+    nav img{
+        width: 300px;
+    }
+
+    #contact #accroche{
+        margin-top: 90px;
+    }
+
+}
+
+
+
 /********************************/
 /********* CSS OVERVIEW ***********/
 /********************************/

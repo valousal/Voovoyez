@@ -51,6 +51,7 @@ $(document).ready(function () {
     //verification position menu si refresh sur contact
     if($(window).scrollTop() > 0){
         $('.main-fixed #nav').animate({
+
             top: '10%'},
             1000);
         $('#link-contact').addClass('active');
@@ -72,9 +73,16 @@ $(document).ready(function () {
         $('#contact').css({position:'absolute'});
         $('#overview').css({position:'fixed', left:'105%'});
 
-        $('.main-fixed #nav').animate({
+        if ($(window).width() < 600){
+            $('.main-fixed #nav').animate({
+            top: '5%'},
+            1000);
+        }else{
+            $('.main-fixed #nav').animate({
             top: '10%'},
             1000);
+        }
+        
         
         $('#link-contact').addClass('active');
         $('#link-realisation').removeClass('active');
@@ -106,7 +114,7 @@ $(document).ready(function () {
 
         $('#link-contact').removeClass('active');
         $('#link-realisation').addClass('active');
-
+        
         $('#back').hide();
 
         $("#back-top").hide();
@@ -127,6 +135,10 @@ $(document).ready(function () {
         $('#link-contact').removeClass('active');
         $('#link-realisation').removeClass('active');
         
+        $('.others_illustrations').css({zIndex:1400});
+        //Overlay
+        // $('#overlay').fadeOut(200);
+        
         $('body').css('cursor','default');
 
         $("#back-top").hide();
@@ -144,6 +156,12 @@ $(document).ready(function () {
         $('#overview').css({position:'fixed', left:'105%'});
         $('body').css('cursor','');
         $('#link-realisation').addClass('active');
+        $('.others_illustrations').delay(800)
+                                    .queue(function (next) { 
+                                        $(this).css({zIndex:1700});
+                                        next();
+                                    });
+        // $('.others_illustrations').delay(300).fadeIn(300);
         
         return false;
     });

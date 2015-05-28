@@ -384,7 +384,7 @@ body{
     max-width: 1200px;
     max-height: 80%;
     overflow-y:auto;
-    z-index: 20000000;
+    z-index: 1700;
     /*border-radius: 10px;*/
 }
 

@@ -21,7 +21,7 @@
                     bottom:'2%'
                 },900).css({display:'inline-block'});
 
-                $(selector2).slice( 0,5 ).css({display:'inline-block'});
+                // $(selector2).slice( 0,15 ).css({display:'inline-block'});
 
                 delay += 100;
             });
@@ -32,6 +32,9 @@
             $(selector +' .ma_taille').not(selector +' a').delay(1200).hide(0);
         }
 
+        if($("#container " + divClass + " div.ma_taille:visible").length == 0){ // check if any hidden divs still exist
+            $("#load").hide(); // alert if there are none left
+        }
 
         //Button more
         $("#load").click(function(e){ // click event for load more

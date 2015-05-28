@@ -16,7 +16,7 @@
                     <div class="header">
                         <div id='vignette'>
                             {% for image in images if projet.id == image.id_projet and image.type == 'vignette' %}
-                                <img class="lazy" src="#" data-original="{{rootUri}}/src/media/assets/datas/img/{{image.nom_dossier}}/{{image.nom_image}}.{{image.extension_image}}" />
+                                <img src="{{rootUri}}/src/media/assets/datas/img/{{image.nom_dossier}}/{{image.nom_image}}.{{image.extension_image}}" alt='{{image.nom_image}}'/>
                             {% endfor %}
                         </div>
                         <div id='description'>
@@ -37,7 +37,7 @@
                                 <div class="avant-apres">
                                     {% for retouche in retouches if retouche.id_images == image.id %}
                                          <!-- The before image is first -->
-                                         <img src="{{rootUri}}/src/media/assets/datas/img/{{retouche.nom_dossier}}/{{retouche.nom_image}}.{{retouche.extension_image}}" />
+                                         <img src="{{rootUri}}/src/media/assets/datas/img/{{retouche.nom_dossier}}/{{retouche.nom_image}}.{{retouche.extension_image}}" alt='{{image.nom_image}}'/>
                                     {% endfor %}
                                 </div>
                             </figure>
@@ -48,7 +48,7 @@
                             <!-- OTHERS PICTURES -->    
                              <figure class="soixante-dix">
                                  <figcaption class="legend">{{image.titre}}</figcaption>
-                                <img class="lazy" src="#" data-original="{{rootUri}}/src/media/assets/datas/img/{{image.nom_dossier}}/{{image.nom_image}}.{{image.extension_image}}" />
+                                <img class="lazy" src="#" data-original="{{rootUri}}/src/media/assets/datas/img/{{image.nom_dossier}}/{{image.nom_image}}.{{image.extension_image}}" alt='{{image.nom_image}}'/>
                             </figure>
                         {% endfor %}
                         
