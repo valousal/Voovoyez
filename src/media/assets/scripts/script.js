@@ -2,35 +2,50 @@ $(document).ready(function () {
     
      $(window).resize(function(){
          //Width and height in css inline for balise ul#scene
+         //Width and height in css inline for balise div#overview
         scene = $('#scene');
-        scene.css('height', $(window).height());
-        scene.css('width', $(window).width()) ;
+        overview = $('#overview');
+        if($(window).width() > 480){
+            scene.css('height', $(window).height());
+            scene.css('width', $(window).width()) ;
+            overview.css('height', $(window).height());
+            overview.css('width', $(window).width()) ;
+            $scene.parallax('enable');
+
+        }else{
+            scene.css('height', $(window).height() - 100);
+            scene.css('width', $(window).width()) ;
+            overview.css('height', $(window).height() - 100);
+            overview.css('width', $(window).width()) ;
+            $scene.parallax('disable');
+        }
          
         //Width and height in css inline for balise div#contact
         contact = $('#contact');
         contact.css('height', $(window).height());
         contact.css('width', $(window).width()) ;
         // contact.css('top', $(window).height()) ;
-         
-         
-        //Width and height in css inline for balise div#overview
-        overview = $('#overview');
-        overview.css('height', $(window).height());
-        overview.css('width', $(window).width()) ;
-        // overview.css('left', '105%') ;
-         
-         
-        //Width and height in css inline for balise li.layer
-       /* layer = $('.layer');
-        layer.css('width', '40%') ;*/
-     });
+
         
-    
+     });
+
+    //Figure
+    figure = $('figure.soixante-dix');
+    figure.css('height', $(window).height() * 0.6);
+        
+    if($(window).width() < 480){
+        $scene.parallax('disable');
+     }
     
     //Width and height in css inline for balise ul#scene
     scene = $('#scene');
-    scene.css('height', $(window).height());
-    scene.css('width', $(window).width()) ;
+    if($(window).width() > 480){
+        scene.css('height', $(window).height());
+        scene.css('width', $(window).width()) ;
+    }else{
+        scene.css('height', $(window).height() - 100);
+        scene.css('width', $(window).width()) ;
+    }
     
     
     
@@ -43,8 +58,13 @@ $(document).ready(function () {
     
     //Width and height in css inline for balise div#overview
     overview = $('#overview');
-    overview.css('height', $(window).height());
-    overview.css('width', $(window).width()) ;
+    if($(window).width() > 480){
+        overview.css('height', $(window).height());
+        overview.css('width', $(window).width()) ;
+    }else{
+        overview.css('height', $(window).height() - 100);
+        overview.css('width', $(window).width()) ;
+    }
     overview.css('left', '105%') ;
     
     
@@ -72,16 +92,10 @@ $(document).ready(function () {
         $('#container').delay(1000).hide(0);
         $('#contact').css({position:'absolute'});
         $('#overview').css({position:'fixed', left:'105%'});
-
-        if ($(window).width() < 600){
-            $('.main-fixed #nav').animate({
-            top: '5%'},
-            1000);
-        }else{
-            $('.main-fixed #nav').animate({
-            top: '10%'},
-            1000);
-        }
+        
+        $('.main-fixed #nav').animate({
+            top: '40'},
+        1000);
         
         
         $('#link-contact').addClass('active');
@@ -104,9 +118,16 @@ $(document).ready(function () {
             scrollLeft: 0},
             0);
         
-        $('.main-fixed #nav').animate({
-            top: '75%'},
-            1000);
+        if($(window).width() > 480){
+            $('.main-fixed #nav').animate({
+                top: '75%'},
+                1000);
+        }else{
+            $('.main-fixed #nav').animate({
+                top: '20'},
+                1000);
+        }
+        
         
         $('#container').show();
         $('#overview').css({position:'fixed', left:'105%'});
@@ -128,10 +149,13 @@ $(document).ready(function () {
             /*scrollLeft : $(window).width()*/},
             0);
 
-        $('#back').show();
-        $('#overview').css({left:'0'});
+        if($(window).width() > 480){
+            $('#back').delay(500).fadeIn(200);
+        }
+        
+        $('#overview').css({position:'absolute',left:'0', top:'100'});
+        $('#contact').css({position:'fixed'});
         $('#container').delay(1000).hide(0);
-        $('#overview').css({position:'absolute'});
         $('#link-contact').removeClass('active');
         $('#link-realisation').removeClass('active');
         
@@ -186,9 +210,15 @@ $(document).ready(function () {
 				scrollTop: 0
 			}, 900);
             
-            $('.main-fixed #nav').animate({
-            top: '75%'},
-            1000);
+            if($(window).width() > 480){
+                $('.main-fixed #nav').animate({
+                    top: '75%'},
+                    1000);
+            }else{
+                $('.main-fixed #nav').animate({
+                    top: '20'},
+                    1000);
+            }
             
             $('#container').show();
             $('#overview').css({position:'fixed', left:'105%'});
@@ -202,12 +232,6 @@ $(document).ready(function () {
             $("#back-top").fadeOut(200);
 			return false;
 		});
-    
-    
-    
-    //Figure
-    figure = $('figure.soixante-dix');
-    figure.css('height', $(window).height() * 0.6);
     
     //random thumb
     // random(0);
@@ -268,5 +292,20 @@ $(document).ready(function () {
         centerLayer();
     });
 
+
+
+    // Hover mobile
+    $('.view-first:hover .mask').on("touchstart", function (e) {
+        "use strict"; //satisfy the code inspectors
+        var link = $(this); //preselect the link
+        if (link.hasClass('hover')) {
+            return true;
+        } else {
+            link.addClass("hover");
+            $('.view-first:hover .mask').not(this).removeClass("hover");
+            e.preventDefault();
+            return false; //extra, and to make sure the function has consistent return points
+        }
+    });
 
 });

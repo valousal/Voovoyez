@@ -544,19 +544,29 @@
 /********************************/
 /********* CSS OVERVIEW ***********/
 /********************************/
-/********* General *********/
+
+@media screen and (max-width: 1000px){
+    /********* General *********/
 
 
 
-/********* Header *********/
+    /********* Header *********/
 
-/********* Avant-Après *********/
+    /********* Avant-Après *********/
+
+    #overview #projects .twenty{
+        width: 80%;
+        margin: auto;
+        margin-bottom: 140px;
+    }
 
 
-/********* Affiche/Image *********/
+    /********* Affiche/Image *********/
 
 
-/********* Digipack *********/
+    /********* Digipack *********/
 
 
-/********* Brochures *********/
+    /********* Brochures *********/
+
+}

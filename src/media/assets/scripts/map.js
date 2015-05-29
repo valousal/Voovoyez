@@ -12,7 +12,7 @@ $(document).ready(function () {
     }).addTo(map);
 
     // add a marker in the given location, attach some popup content to it and open the popup
-    L.marker([48.285763, 6.940211]).addTo(map);
+    L.marker([48.285618, 6.940169]).addTo(map);
         /*.bindPopup("57 Rue d'Hellieule <br> 88100 Saint-Dié-des-Vosges")
         .openPopup();*/
     

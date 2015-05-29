@@ -28,11 +28,12 @@
     <!-- Mon style -->
 	<link rel="stylesheet" type="text/css" href="{{rootUri}}/src/media/assets/styles/styles.css"/>
     
-    <!-- View -->
+    <!-- View (hover realisations) -->
     <link rel="stylesheet" type="text/css" href="{{rootUri}}/src/media/assets/styles/view.css"/>
 
     <!-- Mon style MediaQuery -->
     <link rel="stylesheet" type="text/css" href="{{rootUri}}/src/media/assets/styles/styles_media.css"/>
+    <link rel="stylesheet" type="text/css" href="{{rootUri}}/src/media/assets/styles/styles_mobile.css" />
     
     <!--\\\\\\ Script //////-->
     <!-- JQUERY -->
@@ -195,6 +196,7 @@
     
     
     <script>
+    
         $(document).ready(function ($) {
             $('.cycle').cyclotron();
         });
@@ -207,6 +209,8 @@
                     axis: "y",
                     theme: "minimal",
                     autoHideScrollbar: true,
+                    scrollType: "stepless",
+                    scrollInertia: 10
                 });
             });
         })(jQuery);
